@@ -21,7 +21,7 @@
    # User Account Configuration
          users.users.nyx = {
          isNormalUser = true;
-   # descrition = "Your Name";
+         descrition = "nyx";
          extraGroups = [ "networkmanager" "wheel" "users" ];
          initialPassword = "nixos";
  };

@@ -9,15 +9,21 @@
                   inputs.nixpkgs.follows = "nixpkgs";
                  };
   };
+
 # What this flake produces Outputs
-  outputs = { self, nixpkgs, home-manager, ...}@inputs: {   # Config for GBOOK
-            nixosConfigurations = { gbook = nixpkgs.lib.nixosSystem
-                                  { system = "x86_64-linux";
-# Passes inputs like home manager down to other files, and adds Home Manager as a mod so 
-# it runs with the system rebuild 
+  outputs = { self, nixpkgs, home-manager, ...}@inputs: 
+            { nixosConfigurations = { gbook = nixpkgs.lib.nixosSystem
+                                    { system = "x86_64-linux";
+                      specialArgs = { inherit inputs; };
+                                     
              modules = [ ./hosts/gbook/galaxy.nix
-                          home-manager.nixosModules.home-manager ];
-         };
-      };
-   };
-}
+                          home-manager.nixosModules.home-manager 
+                       ];
+           };
+        };
+    };
+  }
+
+
+
+

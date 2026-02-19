@@ -12,17 +12,32 @@
 
 # What this flake produces Outputs
   outputs = { self, nixpkgs, home-manager, ...}@inputs: 
-            { nixosConfigurations = { gbook = nixpkgs.lib.nixosSystem
+            { 
+              nixosConfigurations = { gbook = nixpkgs.lib.nixosSystem
                                     { system = "x86_64-linux";
                       specialArgs = { inherit inputs; };
                                      
              modules = [ ./hosts/gbook/galaxy.nix
                           home-manager.nixosModules.home-manager 
                        ];
-           };
-        };
-    };
-  }
+                   };
+                };
+             };
+            }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 

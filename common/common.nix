@@ -9,7 +9,14 @@
    # Global Packages (Every host gets these)
         environment.systemPackages = with pkgs; [
                      git
+                     gh
                      fastfetch 
+                     glances
+                     cage
+                     curl
+                     tmux
+                     qutebrowser
+                     
         ];
    # User Account Configuration
          users.users.nyx = {
@@ -18,18 +25,17 @@
          extraGroups = [ "networkmanager" "wheel" "users" ];
          initialPassword = "nixos";
  };
-    # Global Home Manager Settins
+    # Global Home Manager Settings
       home-manager = {
         useGlobalPkgs = true;
         useUserPackages = true;
         extraSpecialArgs = { inherit inputs; };
-        users.nyx = { home.stateVersion = "24.11";
-    # Add user-level settings here that apply to All Hosts
+     # Add user-level settings here that apply to All Hosts
         programs.bash.enable = true;
         };
  };
 # Experimental features for Flakes
 nix.settings.experimental-features = [ "nix-command" "flakes" ];
-system.stateVersion = "24.11";
+
 }   
  

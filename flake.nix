@@ -15,7 +15,7 @@
                                   { system = "x86_64-linux";
 # Passes inputs like home manager down to other files, and adds Home Manager as a mod so 
 # it runs with the system rebuild 
-             modules = [ ./hosts/gbook/configuration.nix
+             modules = [ ./hosts/gbook/galaxy.nix
                           home-manager.nixosModules.home-manager ];
                                  
                          };

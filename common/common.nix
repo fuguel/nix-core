@@ -11,6 +11,7 @@
                      git
                      gh
                      fastfetch 
+                     kitty
                      glances
                      cage
                      curl

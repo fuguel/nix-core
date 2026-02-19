@@ -36,6 +36,4 @@
  };
 # Experimental features for Flakes
 nix.settings.experimental-features = [ "nix-command" "flakes" ];
-
-}   
- 
+}

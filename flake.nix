@@ -17,12 +17,7 @@
 # it runs with the system rebuild 
              modules = [ ./hosts/gbook/galaxy.nix
                           home-manager.nixosModules.home-manager ];
-                                 
-                         };
-
-# Placeholder for next host
-                    
-
-             };
-           };
-        }
+         };
+      };
+   };
+}

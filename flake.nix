@@ -1,11 +1,11 @@
 # Start of the Main Flake
 
- { description = " Nix-Core Infratructure";
+ { description = "Nix-Core Infratructure";
 # External Dependicies Inputs
 # Standard NixOs Packages
   inputs = { nixpkgs.url = "github:nixos/nixpkgs/nixos-unstable";
 # User-level Configuration Tool, Keep HomeManager on same version as system
-  home-manager = { url = "github:nix-community/home-manager;
+  home-manager = { url = "github:nix-community/home-manager";
                   inputs.nixpkgs.follows = "nixpkgs";
                  };
   };

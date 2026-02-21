@@ -7,7 +7,16 @@
     [ 
       ./hardware-configuration.nix
       ../../common/common.nix
+      ../../modules/hyprland
     ];
+       home-manager.users.nyx = {
+       home.stateVersion = "25.11";
+imports = [
+      ../../modules/hyprland/home.nix
+          ];
+                                };
+
+
   # Use the systemd-boot EFI boot loader.
   boot.loader.systemd-boot.enable = true;
   boot.loader.efi.canTouchEfiVariables = true;

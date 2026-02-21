@@ -8,12 +8,13 @@
       ./hardware-configuration.nix
       ../../common/common.nix
       ../../modules/hyprland
-    ];
+   ];
        home-manager.users.nyx = {
        home.stateVersion = "25.11";
-imports = [
+   imports = [
       ../../modules/hyprland/home.nix
-          ];
+      ../../modules/neovim/home.nix      
+    ];
                                 };
 
 

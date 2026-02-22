@@ -8,7 +8,8 @@
       ./hardware-configuration.nix
       ../../common/common.nix
       ../../modules/hyprland
-   ];
+      ../../modules/distrobox
+    ];
        home-manager.users.nyx = {
        home.stateVersion = "25.11";
    imports = [
@@ -21,7 +22,13 @@
   # Use the systemd-boot EFI boot loader.
   boot.loader.systemd-boot.enable = true;
   boot.loader.efi.canTouchEfiVariables = true;
-  hardware.graphics.enable = true;
+  hardware.graphics = {
+         enable = true;
+         enable32Bit = true;
+                     };
+ 
+
+
   networking.hostName = "gbook"; 
   # Configure network connections interactively with nmcli or nmtui.
   networking.networkmanager.enable = true;

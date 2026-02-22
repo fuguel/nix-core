@@ -1,0 +1,11 @@
+{ pkgs, ... }: {
+# ENABLE PODMAM
+virtualisation.podman = {
+         enable = true;
+         dockerCompat = true;
+         defaultNetwork.settings.dns_enabled = true;
+                      };
+
+# INSTALL DISTROBOX
+environment.systemPackages = [ pkgs.distrobox ];
+}

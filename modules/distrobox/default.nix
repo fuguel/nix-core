@@ -7,5 +7,5 @@ virtualisation.podman = {
                       };
 
 # INSTALL DISTROBOX
-environment.systemPackages = [ pkgs.distrobox ];
+environment.systemPackages = [ pkgs.distrobox pkgs.crun ];
 }

@@ -26,7 +26,8 @@
   hardware.xpadneo.enable = true;
   hardware.steam-hardware.enable = true;
   hardware.bluetooth.enable = true; 
- 
+  hardware.bluetooth.powerOnBoot = true;
+
   hardware.graphics = {
            enable = true;
            enable32Bit = true;
@@ -43,6 +44,8 @@
   # OR
    services.pipewire = {
    enable = true;
+   alsa.enable = true;
+   alsa.support32Bit = true;
    pulse.enable = true;
                        };
   # Enable touchpad support (enabled default in most desktopManager).

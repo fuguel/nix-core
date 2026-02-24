@@ -25,7 +25,7 @@
          users.users.nyx = {
          isNormalUser = true;
          description = "nyx";
-         extraGroups = [ "networkmanager" "wheel" "users" ];
+         extraGroups = [ "networkmanager" "wheel" "users" "input" "video" ];
          initialPassword = "nixos";
  };
     # Global Home Manager Settings

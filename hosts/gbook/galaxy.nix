@@ -27,8 +27,16 @@
   boot.kernelModules = [ "hid-xpadneo" ];
   hardware.xpadneo.enable = true;
   hardware.steam-hardware.enable = true;
+ boot.extraModprobeConfig = ''
+           options bluetooth disable_ertm=1
+           options bluetooth privacy=0
+                            '';
+ 
 
-  hardware.graphics = {
+
+
+
+ hardware.graphics = {
          enable = true;
          enable32Bit = true;
                      };

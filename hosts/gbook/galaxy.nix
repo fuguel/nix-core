@@ -19,6 +19,7 @@
 
 environment.systemPackages = with pkgs; [
 alsa-utils
+alsa-tools
 wireplumber
 ];
   # Use the systemd-boot EFI boot loader.

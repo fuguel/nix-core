@@ -1,7 +1,6 @@
 # GBOOK LAPTOP HOST
 
 { config, lib, pkgs, ... }:
-
 {
   imports =
     [ 
@@ -22,6 +21,9 @@
   # Use the systemd-boot EFI boot loader.
   boot.loader.systemd-boot.enable = true;
   boot.loader.efi.canTouchEfiVariables = true;
+  boot.extraModulePackages = [ config.boot.kernelPackages.xpadneo ];
+  hardware.steam-hardware.enable = true;
+
   hardware.graphics = {
          enable = true;
          enable32Bit = true;
@@ -64,6 +66,8 @@
   # (/run/current-system/configuration.nix). This is useful in case you
   # accidentally delete configuration.nix.
   # system.copySystemConfiguration = true;
+
+  hardware.bluetooth.enable = true;
   system.stateVersion = "25.11"; 
  }
 

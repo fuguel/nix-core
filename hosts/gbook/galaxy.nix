@@ -30,7 +30,12 @@
  boot.extraModprobeConfig = ''
            options bluetooth disable_ertm=1
            options bluetooth privacy=0
-                            '';
+                          '';
+
+boot.kernelParams = [ 
+              "bluetooth.disable_ertm=1"
+              "bluetooth.privacy=0"
+                   ];
  
 
 

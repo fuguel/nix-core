@@ -21,7 +21,7 @@
   # Use the systemd-boot EFI boot loader.
   boot.loader.systemd-boot.enable = true;
   boot.loader.efi.canTouchEfiVariables = true;
-  boot.extraModulePackages = [ config.boot.kernelPackages.xpadneo ];
+  hardware.xpadneo.enable = true;
   hardware.steam-hardware.enable = true;
 
   hardware.graphics = {

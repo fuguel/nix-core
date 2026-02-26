@@ -4,8 +4,7 @@
       hyprland
       waybar
       wofi
-      iio-hyprland
-      jq 
+      rot8 
 ];
 home.file.".config/hypr/hyprland.conf".source = ./hyprland.conf;
 }

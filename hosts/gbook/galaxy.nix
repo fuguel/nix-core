@@ -14,6 +14,7 @@
    imports = [
       ../../modules/hyprland/home.nix
       ../../modules/neovim/home.nix      
+      ../../modules/yazi/home.nix
     ];
                                 };
 
@@ -21,6 +22,7 @@ environment.systemPackages = with pkgs; [
 alsa-utils
 alsa-tools
 wireplumber
+rot8
 ];
   # Use the systemd-boot EFI boot loader.
   boot.loader.systemd-boot.enable = true;

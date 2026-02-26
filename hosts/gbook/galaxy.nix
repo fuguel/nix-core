@@ -31,6 +31,7 @@ wireplumber
   hardware.steam-hardware.enable = true;
   hardware.bluetooth.enable = true; 
   hardware.bluetooth.powerOnBoot = true;
+  hardware.sensor.iio.enable = true;
 
   hardware.graphics = {
            enable = true;

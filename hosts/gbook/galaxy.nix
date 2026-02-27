@@ -15,7 +15,9 @@
       ../../modules/hyprland/home.nix
       ../../modules/neovim/home.nix      
       ../../modules/yazi/home.nix
-    ];
+      ../../modules/neomutt/home.nix
+
+   ];
                                 };
 
 environment.systemPackages = with pkgs; [

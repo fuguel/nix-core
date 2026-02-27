@@ -17,15 +17,15 @@
        Port 993
        User nyx@fuguel.xyz
        PassCmd "cat ~/.config/mbsync/pass"
-       SSLType IMAPS
+       TLSTType IMAPS
        AuthMechs LOGIN
 
        IMAPStore fuguel-remote
        Account fuguel
 
        MaildirStore fuguel-local
-       Path ~/mail/
-       Inbox ~/mail/INBOX
+       Path /home/nyx/mail
+       Inbox /home/nyx/mail/INBOX
        SubFolders Verbatim
 
        Channel fuguel

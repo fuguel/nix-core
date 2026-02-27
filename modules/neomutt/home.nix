@@ -12,6 +12,7 @@
        '';
 
          home.packages = with pkgs; [
+         neomutt
          isync
          msmtp
          w3m

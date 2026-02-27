@@ -1,9 +1,6 @@
 { pkgs, ... }:
 {
-  programs.neomutt = {
-      enable = true;
-  
-      extraConfig = ''
+        home.file.".config/neomutt/neomuttrc".text = ''
         set realname = "Jand"
         set from = "nyx@fuguel.xyz"
 
@@ -13,10 +10,8 @@
 
         set sendmail = "${pkgs.msmtp}/bin/msmtp"
        '';
-  };
 
-
-home.packages = with pkgs; [
+         home.packages = with pkgs; [
          isync
          msmtp
          w3m

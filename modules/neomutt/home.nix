@@ -36,6 +36,24 @@
        SyncState *
       '';
 
+      programs.msmtp = {
+         enable = true;
+
+        extraAccounts = ''
+        account fuguel
+        host = redbull.mxrouting.net
+        port = 465
+        from = nyx@fuguel.xyz
+        user = nyx@fuguel.xyz
+        passwordeval = "cat /home/nyx/.config/mbsync/pass"
+        tls = on
+        tls_starttls = off
+        auth = on
+                '';    
+                
+       
+    };
+
 
       home.packages = with pkgs; [
          neomutt
@@ -44,5 +62,4 @@
          w3m
    ];
 }
-
 

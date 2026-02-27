@@ -39,7 +39,7 @@
       programs.msmtp = {
          enable = true;
 
-        extraAccounts = ''
+        configContent = ''
         account fuguel
         host = redbull.mxrouting.net
         port = 465

@@ -24,7 +24,7 @@
        Account fuguel
 
        MaildirStore fuguel-local
-       Path /home/nyx/mail
+       Path /home/nyx/mail/
        Inbox /home/nyx/mail/INBOX
        SubFolders Verbatim
 

@@ -7,7 +7,7 @@
       set folder = "~/mail"
       set spoolfile = "+INBOX"
       set mbox_type = "Maildir"
-
+      set record = "+Sent"
         set sendmail = "${pkgs.msmtp}/bin/msmtp"
        '';
 

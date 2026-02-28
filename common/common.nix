@@ -21,7 +21,13 @@
                      qutebrowser
                      
         ];
-   # User Account Configuration
+  
+  fonts.packages = with pkgs; [ nerd-fonts.jetbrains-mono ];
+
+
+
+
+# User Account Configuration
          users.users.nyx = {
          isNormalUser = true;
          description = "nyx";

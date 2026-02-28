@@ -41,15 +41,16 @@
 
         configContent = ''
         account fuguel
-        host = redbull.mxrouting.net
-        port = 465
-        from = nyx@fuguel.xyz
-        user = nyx@fuguel.xyz
-        passwordeval = "cat /home/nyx/.config/mbsync/pass"
-        tls = on
-        tls_starttls = off
-        auth = on
-                '';    
+        host redbull.mxrouting.net
+        port 465
+        from nyx@fuguel.xyz
+        user nyx@fuguel.xyz
+        passwordeval "cat /home/nyx/.config/mbsync/pass"
+        tls on
+        tls_starttls off
+        auth on
+        account default : fuguel
+            '';    
                 
        
     };
@@ -58,7 +59,6 @@
       home.packages = with pkgs; [
          neomutt
          isync
-         msmtp
          w3m
    ];
 }

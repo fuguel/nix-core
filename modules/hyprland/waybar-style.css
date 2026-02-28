@@ -1,7 +1,20 @@
-* {
-  font-family: JetBrainsMono Nerd Font;
-  font-size: 13px;
+#waybar {
+    background-color: #1E90FF; /* Blue background */
+    border-radius: 10px; /* Rounded corners for a softer look */
+    box-shadow: 0 4px 16px rgba(0, 0, 0, 0.5); /* Shadow effect */
+    padding: 10px; /* Padding around the bar */
 }
-window#waybar {
-background: rgba(20,20,20,0.9);
+
+#waybar .custom-clock {
+    color: #FFA500; /* Orange text color */
+    font-size: 2em; /* Larger font size */
+    font-family: Arial, sans-serif;
+    text-align: center; /* Center align text */
+    text-shadow: 0 0 10px rgba(255, 165, 0, 0.8), 0 0 20px rgba(0, 0, 0, 0.6); /* Flashy effect */
+    transition: transform 0.5s ease; /* Hover effect */
 }
+
+#waybar .custom-clock:hover {
+    transform: scale(1.1); /* Enlarge on hover */
+}
+

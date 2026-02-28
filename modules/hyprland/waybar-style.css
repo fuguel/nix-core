@@ -5,7 +5,7 @@ window#waybar {
   font-family: "JetBrainsMono Nerd Font";
   font-size: 14px;
   color: #ffffff;
-
+}
   #clock {
     font-size: 22px;
     font-weight: 800;

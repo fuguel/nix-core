@@ -1,20 +1,35 @@
-#waybar {
-    background-color: #1E90FF; /* Blue background */
-    border-radius: 10px; /* Rounded corners for a softer look */
-    box-shadow: 0 4px 16px rgba(0, 0, 0, 0.5); /* Shadow effect */
-    padding: 10px; /* Padding around the bar */
-}
+window#waybar {
+  background: rgba(15, 15, 25, 0.85);
+  border-radius: 18px;
+  border: 2px solid #ff6a00;
+  font-family: "JetBrainsMono Nerd Font";
+  font-size: 14px;
+  color: #ffffff;
 
-#waybar .custom-clock {
-    color: #FFA500; /* Orange text color */
-    font-size: 2em; /* Larger font size */
-    font-family: Arial, sans-serif;
-    text-align: center; /* Center align text */
-    text-shadow: 0 0 10px rgba(255, 165, 0, 0.8), 0 0 20px rgba(0, 0, 0, 0.6); /* Flashy effect */
-    transition: transform 0.5s ease; /* Hover effect */
-}
+  #clock {
+    font-size: 22px;
+    font-weight: 800;
+    color: #ff6a00;
+    letter-spacing: 3px;
+    padding: 0 20px;
+  }
+  
+  #workspaces button {
+    padding: 0 10px;
+    margin: 0 4px;
+    border-radius: 10px;
+    background: transparent;
+    color: #cccccc;
+  }
+  
+  #workspaces button.active {
+    background: #ff6a00;
+    color: #000000;
+  }
 
-#waybar .custom-clock:hover {
-    transform: scale(1.1); /* Enlarge on hover */
-}
+  #network,
+  #battery,
+  #pulseaudio {
+    padding: 0 10px;
+  }
 

@@ -1,25 +1,17 @@
 {
-  "layer": "above",
-  "position": "top",
-  "modules-left": [],
-  "modules-center": [
-    "custom/clock"
-  ],
-  "modules-right": [],
-  "custom": {
-    "clock": {
-      "format": "%H:%M:%S",
-      "interval": 1,
-      "tooltip": false,
-      "custom": {
-        "style": "centerClock"
-      }
-    }
-  },
-  "background": {
-    "color": "#1E90FF"
-  },
-  "floating": true,
-  "padding": 10
-}
+   "layer": "top",
+   "position": "top",
+   "margin-top": 10,
+   "margin-left": 40,
+   "margin-right": 40,
+   "height": 40,
+   
+   "modules-left": ["hyprland/workspaces"],
+   "modules-center": ["clock"],
+   "modules-right": ["network", "pulseaudio", "battery"],
 
+   "clock": {
+         "format": "{:%H:%M}",
+         "tooltip-format": "{:%A, %d %B %Y}"
+   }
+}

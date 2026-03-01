@@ -21,6 +21,7 @@
                                 };
 
 environment.systemPackages = with pkgs; [
+brightnessctl
 alsa-utils
 alsa-tools
 wireplumber

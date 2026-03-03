@@ -19,7 +19,9 @@
                      curl
                      tmux
                      qutebrowser
-                     
+                     smplayer
+                     strawberry
+
         ];
   
   fonts.packages = with pkgs; [ nerd-fonts.jetbrains-mono ];

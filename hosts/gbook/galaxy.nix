@@ -21,11 +21,12 @@
                                 };
 
 environment.systemPackages = with pkgs; [
-brightnessctl
-alsa-utils
-alsa-tools
-wireplumber
-rot8
+     brightnessctl
+     alsa-utils
+     alsa-tools
+     wireplumber
+     rot8
+     prismlauncher
 ];
   # Use the systemd-boot EFI boot loader.
   boot.loader.systemd-boot.enable = true;

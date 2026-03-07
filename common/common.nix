@@ -21,7 +21,7 @@
                      qutebrowser
                      smplayer
                      strawberry
-
+                     fish
         ];
   
   fonts.packages = with pkgs; [ nerd-fonts.jetbrains-mono ];

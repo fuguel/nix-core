@@ -33,6 +33,7 @@ environment.systemPackages = with pkgs; [
   boot.loader.efi.canTouchEfiVariables = true;
   
   boot.kernelPackages = pkgs.linuxPackages_latest;
+  boot.kernelParams = [ "loglevel=3" "pci-nommconf" ];
   hardware.xpadneo.enable = true;
   hardware.steam-hardware.enable = true;
   hardware.bluetooth.enable = true; 

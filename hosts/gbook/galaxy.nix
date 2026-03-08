@@ -33,13 +33,13 @@ environment.systemPackages = with pkgs; [
   boot.loader.efi.canTouchEfiVariables = true;
   
   boot.kernelPackages = pkgs.linuxPackages_latest;
-  boot.kernelParams = [ "loglevel=3" "pci-nommconf" "ucsi_acpi.ignore_errors=1" ];
+  boot.kernelParams = [ "quiet" "loglevel=3" "pci-nommconf" "ucsi_acpi.ignore_errors=1" "systemd.show_status=auto" "rd.udev.log_level=3" "acpi_enforce_resources=lax" ];
   hardware.xpadneo.enable = true;
   hardware.steam-hardware.enable = true;
   hardware.bluetooth.enable = true; 
   hardware.bluetooth.powerOnBoot = true;
   hardware.sensor.iio.enable = true;
-
+  services.thermald.enable = true;
   hardware.graphics = {
            enable = true;
            enable32Bit = true;

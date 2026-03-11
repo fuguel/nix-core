@@ -34,6 +34,7 @@ environment.systemPackages = with pkgs; [
   boot.kernelPackages = pkgs.linuxPackages_latest;
   boot.kernelParams = [ "loglevel=0" "pci-nommconf" "ucsi_acpi.ignore_errors=1" "systemd.show_status=true" "rd.udev.log_level=3" "acpi_enforce_resources=lax" "modprobe.blacklist=acpi_fan" ];
   boot.blacklistedKernelModules = [ "acpi_fan" ];
+  boot.initrd.blacklistedKernelModules = [ "acpi_fan" ];
   hardware.xpadneo.enable = true;
   hardware.steam-hardware.enable = true;
   hardware.bluetooth.enable = true; 

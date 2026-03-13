@@ -1,5 +1,5 @@
 # DISKO BIOS PARTITIONING
-{ config, pkgs, lib, ... }:
+{ config, pkgs, ... }:
 {
   disko.devices.disk.main =
       {
@@ -8,20 +8,47 @@
          content = {
               type = "gpt";
               partitions = {
-                    boot = { size = "1M"; type = "EF02"; };
-                    root = { size = "100%";
-
-                    content = { 
-                           type = "filesystem";
-                           format = "ext4";
-                           mountpoint = "/"; };
-                              };
+                    boot = { size = "512M";
+                             type = "EF00";
+                                 content = {
+                                        type = "filesystem";
+                                        format = "vfat";
+                                        mountpoint = "/boot";
+                                            };
                             };
-                          };
-                        };
+                     root = { size = "100%";
+                               content = { 
+                                         type = "filesystem";
+                                         format = "ext4";
+                                         mountpoint = "/"; 
+                                         };
+                                   };
+                               };
+                            };
+                         };
 # BASE SYSTEM CONFIG
-  boot.loader.grub = { enable = true; devices = lib.mkForce [ "/dev/vda" ]; efiSupport = false; };
-  services.openssh.enable = true;
+  boot.loader = {
+           efi.canTouchEfiVariables = false;
+           grub = {
+                enable = true;
+                efiSupport = true;
+                efiInstallAsRemovable = true;
+                device = "nodev";
+                  };
+             };
+
+  services.openssh = {
+           enable = true;
+           settings = {
+                  PermitRootLogin = "yes";
+                  PasswordAuthentication = "false";
+   networking.useDHCP = true;
+   networking.usePredictableInterfaceNames = false;
+  
+  environment.systemPackages = with pkgs; [
+                  git
+                  vim
+                       ];
 
   users.users.root.openssh.authorizedKeys.keys = [ "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIK4LGh5VDbdRJZPDjhdUAMtFOuM5QCcpo/hJ9l9HbxYQ" ];
 

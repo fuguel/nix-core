@@ -15,12 +15,16 @@
                      fastfetch 
                      kitty
                      glances
-                     cage
                      curl
                      tmux
                      rsync
                      fish
-        ];
+                     cpio
+                     htop
+                     util-linux
+                     nmap
+
+    ];
   
   fonts.packages = with pkgs; [ nerd-fonts.jetbrains-mono ];
 

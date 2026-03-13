@@ -42,6 +42,8 @@
            settings = {
                   PermitRootLogin = "yes";
                   PasswordAuthentication = "false";
+                 };
+              };
    networking.useDHCP = true;
    networking.usePredictableInterfaceNames = false;
   
@@ -53,4 +55,5 @@
   users.users.root.openssh.authorizedKeys.keys = [ "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIK4LGh5VDbdRJZPDjhdUAMtFOuM5QCcpo/hJ9l9HbxYQ" ];
 
   system.stateVersion = "25.11";
-  }
+ 
+ }

@@ -27,6 +27,7 @@
                             };
                          };
 # BASE SYSTEM CONFIG
+  boot.kernelParams = [ "console=ttyS0" ];
   boot.loader = {
            efi.canTouchEfiVariables = false;
            grub = {

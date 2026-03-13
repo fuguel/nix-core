@@ -29,12 +29,12 @@
                    };
              bootstrap = nixpkgs.lib.nixosSystem {
                          system = "x86_64-linux";
-                         modules = [ disko.nixModules.disko ./nix-core/bootstrap/deploy.nix ];
+                         modules = [ disko.nixosModules.disko ./bootstrap/deploy.nix ];
                   };
               cloudcore = nixpkgs.lib.nixosSystem {
                          system = "x86_64-linux";
                          specialArgs = { inherit inputs; };
-                                   modules = [ ./nix-core/hosts/cloudcore/droplet.nix
+                                   modules = [ ./hosts/cloudcore/droplet.nix
                                    home-manager.nixosModules.home-manager
                                 ];
                              };

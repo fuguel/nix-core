@@ -18,9 +18,7 @@
                      cage
                      curl
                      tmux
-                     qutebrowser
-                     smplayer
-                     strawberry
+                     rsync
                      fish
         ];
   

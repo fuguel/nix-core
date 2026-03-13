@@ -26,7 +26,9 @@ environment.systemPackages = with pkgs; [
      alsa-tools
      wireplumber
      rot8
-   prismlauncher
+     prismlauncher
+     qutebrowser
+     cage
 ];
   # Use the systemd-boot EFI boot loader.
   boot.loader.systemd-boot.enable = true;

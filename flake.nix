@@ -29,6 +29,7 @@
                    };
              bootstrap = nixpkgs.lib.nixosSystem {
                          system = "x86_64-linux";
+                         specialArgs = { inherit inputs; };
                          modules = [ disko.nixosModules.disko ./bootstrap/deploy.nix ];
                   };
               cloudcore = nixpkgs.lib.nixosSystem {

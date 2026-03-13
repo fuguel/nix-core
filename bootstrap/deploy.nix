@@ -41,7 +41,7 @@
            enable = true;
            settings = {
                   PermitRootLogin = "yes";
-                  PasswordAuthentication = "false";
+                  PasswordAuthentication = false;
                  };
               };
    networking.useDHCP = true;

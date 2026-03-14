@@ -26,12 +26,10 @@
 
     services.openssh = {
              enable = true;
-             settings.PermitRootLogin = "yes";
-             settings.PasswordAuthentication = true;
+             settings.PermitRootLogin = "prohibit-password";
+             settings.PasswordAuthentication = false;
                       };
  nix.settings.experimental-features = [ "nix-command" "flakes" ];
-
-environment.systemPackages = with pkgs; [ fastfetch ];
 
 
 users.users.root = {
@@ -41,7 +39,7 @@ users.users.root = {
 
 
 users.mutableUsers = true;
-
+programs.mosh.enable = true;
 
   system.stateVersion = "25.11"; 
 }

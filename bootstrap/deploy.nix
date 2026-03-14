@@ -1,14 +1,20 @@
 # DISKO BIOS PARTITIONING
-{ config, pkgs, ... }:
+{ config, pkgs, modulesPath, ... }:
 {
-  disko.devices.disk.main =
+   imports = [ (modulesPath + "/virtualisation/digital-ocean-config.nix") ];
+
+disko.devices.disk.main =
       {
          device = "/dev/vda";
          type = "disk";
          content = {
               type = "gpt";
               partitions = {
-                    boot = { size = "512M";
+                    boot = { size = "1M";
+                             type = "EF02";
+                            };
+                     ESP = {
+                             size = "512M";
                              type = "EF00";
                                  content = {
                                         type = "filesystem";
@@ -27,7 +33,7 @@
                             };
                          };
 # BASE SYSTEM CONFIG
-  boot.kernelParams = [ "console=ttyS0" ];
+  boot.kernelParams = [ "console=tty1" "console=ttyS0,115200n8" ];
   boot.loader = {
            efi.canTouchEfiVariables = false;
            grub = {

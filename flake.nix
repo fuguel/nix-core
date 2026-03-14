@@ -19,29 +19,29 @@
 # What this flake produces Outputs
   outputs = { self, nixpkgs, home-manager, disko, ...}@inputs: 
             { 
-              nixosConfigurations = { gbook = nixpkgs.lib.nixosSystem
-                                    { system = "x86_64-linux";
-                      specialArgs = { inherit inputs; };
-                                     
-             modules = [ ./hosts/gbook/galaxy.nix
-                          home-manager.nixosModules.home-manager 
-                       ];
-                   };
-             bootstrap = nixpkgs.lib.nixosSystem {
-                         system = "x86_64-linux";
-                         specialArgs = { inherit inputs; };
-                         modules = [ disko.nixosModules.disko ./bootstrap/deploy.nix ];
-                  };
-              cloudcore = nixpkgs.lib.nixosSystem {
-                         system = "x86_64-linux";
-                         specialArgs = { inherit inputs; };
-                                   modules = [ ./hosts/cloudcore/droplet.nix
-                                   home-manager.nixosModules.home-manager
-                                ];
-                             };
-                           };
-                        };
-                     }
+              nixosConfigurations = {
+                          gbook = nixpkgs.lib.nixosSystem {
+                            system = "x86_64-linux";
+                            specialArgs = { inherit inputs; };
+                            modules = [ ./hosts/gbook/galaxy.nix
+                            home-manager.nixosModules.home-manager ]; 
+                          };    
+                           bootstrap = nixpkgs.lib.nixosSystem {
+                             system = "x86_64-linux";
+                             specialArgs = { inherit inputs; };
+                             modules = [ disko.nixosModules.disko ./bootstrap/deploy.nix ];
+                          };
+                           droplet = nixpkgs.lib.nixosSystem {
+                             system = "x86_64-linux";
+                             specialArgs = { inherit inputs; };
+                             modules = [ ./hosts/droplet/cloud-core.nix
+                             home-manager.nixosModules.home-manager ];
+                          };  
+                };            
+              };           
+           }    
+          
+                     
 
 
 

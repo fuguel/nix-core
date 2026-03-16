@@ -3,8 +3,13 @@
    imports = [ ./hardware-configuration.nix 
                ../../common/common.nix
              ];
-  
-
+  home-manager.users.nyx = {
+  home.stateVersion = "25.11";
+  imports = [
+  ../../modules/neovim/home.nix
+  ../../modules/yazi/home.nix
+  ../../modules/neomutt/home.nix ];
+  };
 
    boot.loader.grub.enable = true;
    boot.loader.grub.device = "/dev/vda";

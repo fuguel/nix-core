@@ -23,7 +23,7 @@
                      htop
                      util-linux
                      nmap
-
+                     ticker
     ];
   
   fonts.packages = with pkgs; [ nerd-fonts.jetbrains-mono ];

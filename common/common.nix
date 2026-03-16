@@ -36,8 +36,10 @@
          isNormalUser = true;
          description = "nyx";
          extraGroups = [ "networkmanager" "wheel" "users" "input" "video" ];
-         openssh.authorizedKeys.keys = [ "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIK4LGh5VDbdRJZPDjhdUAMtFOuM5QCcpo/hJ9l9HbxYQ" ];
-         initialPassword = "nixos";
+         openssh.authorizedKeys.keys = [ "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIK4LGh5VDbdRJZPDjhdUAMtFOuM5QCcpo/hJ9l9HbxYQ" 
+                                         "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIL/hlQl0smIa28Y3kCoRl6OGZFb2PRhDGlZRC50pIGt/" ];
+
+      initialPassword = "nixos";
  };
     # Global Home Manager Settings
       home-manager = {

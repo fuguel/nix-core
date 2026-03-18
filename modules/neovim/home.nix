@@ -1,6 +1,10 @@
 { config, pkgs, ... }:
 {
-  programs.neovim = {
+  imports = [
+  ../dev-tools/nix.nix
+  ];
+
+   programs.neovim = {
    enable = true;
    defaultEditor = true;
    };

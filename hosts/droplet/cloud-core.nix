@@ -2,7 +2,9 @@
  {  
    imports = [ ./hardware-configuration.nix 
                ../../common/common.nix
-             ];
+               ../../dev-tools/nix.nix
+               ../../dev-tools/rust.nix
+            ];
   home-manager.users.nyx = {
   home.stateVersion = "25.11";
   imports = [

@@ -101,3 +101,44 @@ vim.api.nvim_create_autocmd("BufWritePre", {
     vim.lsp.buf.format({ timeout_ms = 2000 })
   end,
 })
+
+-- =========================
+-- Python LSP (pyright)
+-- =========================
+vim.api.nvim_create_autocmd("FileType", {
+  pattern = "python",
+  callback = function()
+    -- Prevent multiple LSP clients for the same buffer
+    if vim.lsp.get_clients({ name = "pyright", bufnr = 0 })[1] then
+      return
+    end
+
+    -- Root detection: look for pyproject.toml, setup.py, or .git
+    local root = vim.fs.find({ "pyproject.toml", "setup.py", ".git" }, { upward = true })[1]
+    root = root and vim.fs.dirname(root) or vim.loop.cwd()
+
+    vim.lsp.start({
+      name = "pyright",
+      cmd = { "pyright-langserver", "--stdio" },
+      root_dir = root,
+      on_attach = function(client, bufnr)
+        -- Optional: enable formatting keybind
+        if client.server_capabilities.documentFormattingProvider then
+          vim.keymap.set("n", "<leader>f", function()
+            vim.lsp.buf.format({ bufnr = bufnr })
+          end, { buffer = bufnr, desc = "Format Python file" })
+        end
+      end,
+    })
+  end,
+})
+
+-- =========================
+-- Autoformat on save for Python
+-- =========================
+vim.api.nvim_create_autocmd("BufWritePre", {
+  pattern = "*.py",
+  callback = function()
+    vim.lsp.buf.format({ timeout_ms = 2000 })
+  end,
+})

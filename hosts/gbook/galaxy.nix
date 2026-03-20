@@ -29,6 +29,7 @@ environment.systemPackages = with pkgs; [
      prismlauncher
      qutebrowser
      cage
+     brave
 ];
   # Use the systemd-boot EFI boot loader.
   boot.loader.systemd-boot.enable = true;

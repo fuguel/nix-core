@@ -37,7 +37,14 @@
                              modules = [ ./hosts/droplet/cloud-core.nix
                              home-manager.nixosModules.home-manager ];
                           };  
-                };            
+                           sr250 = nixpkgs.lib.nixosSystem {
+                             system = "x86_64-linux";
+                             specialArgs = { inherit inputs; };
+                             modules = [ ./hosts/sr250/sr250serv.nix
+                             home-manager.nixosModules.home-manager ];
+                          };
+
+               };            
               };           
            }    
           

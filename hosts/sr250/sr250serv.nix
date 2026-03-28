@@ -9,8 +9,7 @@
 
   # Use the systemd-boot EFI boot loader.
   boot.loader.systemd-boot.enable = true;
-  boot.loader.efi.canTouchEfiVariables = true;
-  boot.initrd.supportedFilesystems = [ "xfs" ]; 
+  boot.loader.efi.canTouchEfiVariables = true; 
   boot.initrd.kernelModules = [ "dm-snapshot" "dm-mirror" "dm-multipath" ];
   
   networking.hostName = "sr250"; 

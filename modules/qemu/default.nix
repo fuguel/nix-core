@@ -1,13 +1,16 @@
 { config, pkgs, ... }:
 
 {
-   vitualisation.libvirt = {
+   virtualisation.libvirtd = {
      enable = true;
           qemu = {
-             package.qemu_kvm;
+             package = pkgs.qemu_kvm;
              runAsRoot = true;
-             ovmf.enable = true;
+             ovmf.packages = [ pkgs.OVMFFull.fd ];
                  };
-      };
+             };
+
 
 environment.systemPackages = with pkgs; [ libvirt virt-viewer qemu_kvm ];
+
+}

@@ -4,7 +4,7 @@
 # External Dependicies Inputs
 # Standard NixOs Packages
   inputs = { nixpkgs.url = "github:nixos/nixpkgs/nixos-unstable";
- 
+             nixvirt.url = "github:AshleyYakeley/NixVirt";               
   disko = { url = "github:nix-community/disko";
             inputs.nixpkgs.follows = "nixpkgs";
           };
@@ -17,15 +17,18 @@
   };
 
 # What this flake produces Outputs
-  outputs = { self, nixpkgs, home-manager, disko, ...}@inputs: 
+  outputs = { self, nixpkgs, home-manager, disko, nixvirt, ...}@inputs: 
             { 
               nixosConfigurations = {
                           gbook = nixpkgs.lib.nixosSystem {
                             system = "x86_64-linux";
                             specialArgs = { inherit inputs; };
                             modules = [ ./hosts/gbook/galaxy.nix
-                            home-manager.nixosModules.home-manager ]; 
-                          };    
+                            home-manager.nixosModules.home-manager  
+                            nixvirt.nixosModules.default ];
+
+
+                         };    
                            bootstrap = nixpkgs.lib.nixosSystem {
                              system = "x86_64-linux";
                              specialArgs = { inherit inputs; };

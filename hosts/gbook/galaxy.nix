@@ -9,7 +9,8 @@
       ../../modules/hyprland
       ../../modules/distrobox
       ../../modules/qemu
-   ];
+      ../../modules/xclarity
+    ];
        home-manager.users.nyx = {
        home.stateVersion = "25.11";
    imports = [

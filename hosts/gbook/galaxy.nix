@@ -8,7 +8,8 @@
       ../../common/common.nix
       ../../modules/hyprland
       ../../modules/distrobox
-    ];
+      ../../modules/qemu
+   ];
        home-manager.users.nyx = {
        home.stateVersion = "25.11";
    imports = [

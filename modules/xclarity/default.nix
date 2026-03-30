@@ -1,15 +1,14 @@
 { config, pkgs, ...}:
 {
+    virtualisation.libvirt.enable = true;
     virtualisation.libvirt.connections."qemu:///system" = { 
              domains = [
                     {
-                    name = "xclarity-administrator";
-
-                  definition = pkgs.writeText "xclarity-admin.xml"
-                      ''
-                          <domain type ='kvm'>
+                      definition = pkgs.writeText "xclarity-admin.xml" ''
+                             <domain type ='kvm'>
                                  <name>xclarity-administrator</name>
                                  <memory unit='GiB'>6</memory>
+                                 <uuid>f0540388-0f5e-4aba-bc6b-23e8e25816f2</uuid>
                                  <vcpu placement='static'>4</vcpu>
                               <os>
                                  <type arch='x86_64' machine='q35'>hvm</type>
@@ -21,17 +20,14 @@
                                     <target dev='vda' bus='virtio'/>
                                  </disk>
                                 <interface type='network'>
-                                    <source bridge='default'/>
+                                    <source network='default'/>
                                     <model type='virtio'/>
                                 </interface>
-                                <console type='pty'>
-                                      <target type='serial' port='0'/>
-                                </console>
                                 <graphics type='spice' autoport='yes'/>
                               </devices>
-                           </domain>
-                        '';
-                  }
+                           </domain> '';
+                            active = false;
+                 }
                ];
             };
          }

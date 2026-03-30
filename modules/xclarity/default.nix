@@ -1,7 +1,10 @@
 { config, pkgs, ...}:
 {
-    virtualisation.libvirt.connections."qemu:///system".domains = [
-               {
+    virtualisation.libvirt.connections."qemu:///system" = { 
+             domains = [
+                    {
+                    name = "xclarity-administrator";
+
                   definition = pkgs.writeText "xclarity-admin.xml"
                       ''
                           <domain type ='kvm'>
@@ -13,12 +16,12 @@
                               </os>
                               <devices>
                                  <disk type='file' device='disk'>
-                                    <driver name='qemu' type='qcow2' cache='writeback'/>
+                                    <driver name='qemu' type='qcow2'/>
                                     <source file='/var/lib/libvirt/images/clarity.qcow2'/>
                                     <target dev='vda' bus='virtio'/>
                                  </disk>
-                                <interface type='bridge'>
-                                    <source bridge='br0'/>
+                                <interface type='network'>
+                                    <source bridge='default'/>
                                     <model type='virtio'/>
                                 </interface>
                                 <console type='pty'>
@@ -29,6 +32,7 @@
                            </domain>
                         '';
                   }
-                                                                    ];
-  }
+               ];
+            };
+         }
 

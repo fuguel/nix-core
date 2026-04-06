@@ -16,5 +16,35 @@
                                      [ "127.0.0.1:${toStringconfig.services.prometheus.exporters.node.port}" ]; }];
                 } 
                             ];
+                                     # Enable Node Eplorer
+       exporters = {
+               node = {
+                      enable = true;
+                      enabledCollectors = [ "systemd" "cpu" "meminfo" "diskstats" "netdev" ];
+                      port = 9100;
+                      };
+                    };
+         };
 
+   services.grafana = {
+          enable = true;
+          settings = {
+                server = {
+                           http_addr = "0.0.0.0";
+                           http_port = 3000;
+                         };
+                      };
+                                    # Add Prometheus as a Data Source
+           provision = {
+                       enable = true;
+                       datasources.settings.datasources = [
+                                         {
+                                            name = "Prometheus";
+                                            url = "http://localhost:9090";
+                                            isDefault = true;
+                                          }
+                                                         ];
+                          };
+                     };
 
+}

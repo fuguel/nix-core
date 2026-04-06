@@ -5,7 +5,8 @@
     [ # Include the results of the hardware scan.
       ./hardware-configuration.nix
       ../../common/common.nix
-    ];
+      ../../services/prometheus
+   ];
 
   # Use the systemd-boot EFI boot loader.
   boot.loader.systemd-boot.enable = true;
@@ -14,7 +15,7 @@
   
   networking.hostName = "sr250"; 
  
-
+  networking.firewall.allowedTCPPorts = [ 3000 9090 ];
 
 users.users.root = {
                 initialPassword = "nixos";

@@ -13,7 +13,7 @@
                { 
                  job_name = "node-exporter";
                  static_configs = [{ targets = 
-                                     [ "127.0.0.1:${toStringconfig.services.prometheus.exporters.node.port}" ]; }];
+                                     [ "127.0.0.1:${toString config.services.prometheus.exporters.node.port}" ]; }];
                 } 
                             ];
                                      # Enable Node Eplorer
@@ -33,13 +33,16 @@
                            http_addr = "0.0.0.0";
                            http_port = 3000;
                          };
-                      };
+                security = { secret_key = "nixos-grafana-test"; };
+
+                    };
                                     # Add Prometheus as a Data Source
            provision = {
                        enable = true;
                        datasources.settings.datasources = [
                                          {
                                             name = "Prometheus";
+                                            type = "prometheus";
                                             url = "http://localhost:9090";
                                             isDefault = true;
                                           }

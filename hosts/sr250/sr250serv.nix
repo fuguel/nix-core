@@ -15,7 +15,7 @@
   
   networking.hostName = "sr250"; 
  
-  networking.firewall.allowedTCPPorts = [ 3000 9090 ];
+  networking.firewall.allowedTCPPorts = [ 3000 9090 8000 9443 ];
 
 users.users.root = {
                 initialPassword = "nixos";

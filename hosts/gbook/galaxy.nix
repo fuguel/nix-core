@@ -8,8 +8,8 @@
       ../../common/common.nix
       ../../modules/hyprland
       ../../modules/distrobox
-      ../../modules/qemu
-      ../../modules/xclarity
+      ../../services/qemu
+      ../../instances/xclarity
     ];
        home-manager.users.nyx = {
        home.stateVersion = "25.11";

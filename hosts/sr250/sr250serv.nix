@@ -14,7 +14,13 @@
   boot.initrd.kernelModules = [ "dm-snapshot" "dm-mirror" "dm-multipath" ];
   
   networking.hostName = "sr250"; 
- 
+  networking.interfaces.eno4 = {
+           useDHCP = false;
+           ipv4.addresses = [ { address = "10.0.0.13"; prefixLength = 24; } ];
+                          };
+  
+
+
   networking.firewall.allowedTCPPorts = [ 3000 9090 8000 9443 ];
 
 users.users.root = {

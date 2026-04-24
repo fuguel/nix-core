@@ -32,7 +32,7 @@
                            bootstrap = nixpkgs.lib.nixosSystem {
                              system = "x86_64-linux";
                              specialArgs = { inherit inputs; };
-                             modules = [ disko.nixosModules.disko ./boot-strap/droplet.nix ];
+                             modules = [ disko.nixosModules.disko ./boot-strap/strap.nix ];
                           };
                            droplet = nixpkgs.lib.nixosSystem {
                              system = "x86_64-linux";

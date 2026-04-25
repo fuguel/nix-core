@@ -4,8 +4,8 @@
   imports =
     [ # Include the results of the hardware scan.
       ./hardware-configuration.nix
-      ../../common.nix
-
+      ../../common/common.nix
+      ../../modules/xfce
     ];
       home-manager.users.nyx = {
       home.stateVersion = "25.11";
@@ -27,12 +27,7 @@ users.users.root = {
                    }; 
 
   users.mutableUsers = true;
-  networking.networkmanager.enable = true;
   
-
-
-
-
   
   # environment.systemPackages = with pkgs; [
   #   vim # Do not forget to add an editor to edit configuration.nix! The Nano editor is also installed by default.
@@ -49,7 +44,7 @@ users.users.root = {
 
 nix.settings.experimental-features = [ "nix-command" "flakes" ];
   
-  systemstateVersion = "25.11"; 
+  system.stateVersion = "25.11"; 
 
 }
 

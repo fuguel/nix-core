@@ -2,7 +2,7 @@
 {
      services.xserver = {
                 enable = true;
-                videoDrivers = [ "intel" ];
+                videoDrivers = [ "modesetting" ];
                 displayManager.lightdm.enable = true;
                 desktopManager.xfce.enable = true;
                 };

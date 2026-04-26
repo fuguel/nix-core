@@ -6,8 +6,8 @@
     [ 
       ./hardware-configuration.nix
       ../../common/common.nix
-#     ../../modules/hyprland
-      ../../modules/xfce
+     ../../modules/hyprland
+#      ../../modules/xfce
       ../../modules/distrobox
       ../../services/qemu
       ../../instances/xclarity
@@ -15,7 +15,7 @@
        home-manager.users.nyx = {
        home.stateVersion = "25.11";
    imports = [
- #     ../../modules/hyprland/home.nix
+      ../../modules/hyprland/home.nix
       ../../modules/neovim/home.nix      
       ../../modules/yazi/home.nix
       ../../modules/neomutt/home.nix

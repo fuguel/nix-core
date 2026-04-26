@@ -46,10 +46,10 @@
                              modules = [ ./hosts/sr250/sr250serv.nix
                              home-manager.nixosModules.home-manager ];
                           };
-                           m90q = nixpkgs.lib.nixosSystem {
+                           m910q = nixpkgs.lib.nixosSystem {
                              system = "x86_64-linux";
                              specialArgs = { inherit inputs; };
-                             modules = [ ./hosts/m90q/m90q.nix
+                             modules = [ ./hosts/m90q/m910q.nix
                              home-manager.nixosModules.home-manager ];
                           };
 

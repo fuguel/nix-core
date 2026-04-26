@@ -46,7 +46,6 @@
         useGlobalPkgs = true;
         useUserPackages = true;
         extraSpecialArgs = { inherit inputs; };
-     # Add user-level settings here that apply to All Hosts
       };
 # Experimental features for Flakes
 nix.settings.experimental-features = [ "nix-command" "flakes" ];

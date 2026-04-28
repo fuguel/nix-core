@@ -18,7 +18,6 @@
                      curl
                      tmux
                      rsync
-                     fish
                      cpio
                      htop
                      util-linux
